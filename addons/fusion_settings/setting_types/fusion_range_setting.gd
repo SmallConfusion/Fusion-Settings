@@ -1,4 +1,5 @@
 @tool
+@icon("../icons/FusionRangeSetting.svg")
 class_name FusionRangeSetting
 extends FusionSetting
 

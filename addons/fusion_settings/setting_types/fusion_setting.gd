@@ -1,4 +1,5 @@
 @tool
+@icon("../icons/FusionSetting.svg")
 class_name FusionSetting
 extends Resource
 

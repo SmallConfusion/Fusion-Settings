@@ -67,7 +67,3 @@ There are two settings in the `ProjectSettings` under `Fusion Settings`.
 `Autoload Path` is an array of directories to search for setting resources to apply at startup.
 
 `Config Save Path` is the path to save the file containing the data for settings.
-
-## Extending
-
-Todo
