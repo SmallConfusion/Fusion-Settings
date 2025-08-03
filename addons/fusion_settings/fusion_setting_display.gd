@@ -1,9 +1,16 @@
+@tool
 class_name FusionSettingDisplay
 extends HBoxContainer
 
-@export var setting: FusionSetting
+@export var setting: FusionSetting:
+	set(x): setting = x; _ready()
+
+var node: Node
 
 func _ready() -> void:
+	if node:
+		node.queue_free()
+	
 	if setting is FusionListSetting:
 		var list := OptionButton.new()
 	
@@ -28,7 +35,7 @@ func _ready() -> void:
 				setting.set_value(value)
 		)
 		
-		_setup(list)
+		_setup_node(list)
 	
 	elif setting is FusionRangeSetting:
 		var slider := HSlider.new()
@@ -48,7 +55,7 @@ func _ready() -> void:
 		else:
 			slider.drag_ended.connect(set_setting)
 		
-		_setup(slider)
+		_setup_node(slider)
 	
 	elif setting.default_value is bool:
 		var toggle := CheckButton.new()
@@ -60,7 +67,7 @@ func _ready() -> void:
 				setting.set_value(on)
 		)
 		
-		_setup(toggle)
+		_setup_node(toggle)
 	
 	elif setting.default_value is String:
 		var line := LineEdit.new()
@@ -72,7 +79,7 @@ func _ready() -> void:
 				setting.set_value(text)
 		)
 		
-		_setup(line)
+		_setup_node(line)
 	
 	elif setting.default_value is int:
 		var line = LineEdit.new()
@@ -84,7 +91,7 @@ func _ready() -> void:
 				setting.set_value(int(text))
 		)
 		
-		_setup(line)
+		_setup_node(line)
 	
 	elif setting.default_value is float:
 		var line = LineEdit.new()
@@ -96,7 +103,7 @@ func _ready() -> void:
 				setting.set_value(float(text))
 		)
 		
-		_setup(line)
+		_setup_node(line)
 	
 	elif setting.default_value is Color:
 		var picker := ColorPickerButton.new()
@@ -108,7 +115,7 @@ func _ready() -> void:
 				setting.set_value(color)
 		)
 		
-		_setup(picker)
+		_setup_node(picker)
 	
 	else:
 		push_error(
@@ -118,10 +125,11 @@ func _ready() -> void:
 			setting.default_value
 		)
 
-func _setup(option_node: Control) -> void:
+func _setup_node(option_node: Control) -> void:
 	var box := HBoxContainer.new()
 	box.set_anchors_preset(PRESET_FULL_RECT)
 	box.tooltip_text = setting.description
+	node = box
 	add_child(box)
 	
 	var label := Label.new()

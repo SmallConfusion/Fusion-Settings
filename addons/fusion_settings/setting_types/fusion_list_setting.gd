@@ -1,3 +1,4 @@
+@tool
 class_name FusionListSetting
 extends FusionSetting
 
