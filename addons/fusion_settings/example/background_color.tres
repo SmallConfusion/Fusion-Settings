@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FusionSetting" load_steps=2 format=3 uid="uid://bc2bn23i8stp5"]
+
+[ext_resource type="Script" uid="uid://dsv4sjumrikwq" path="res://addons/fusion_settings/setting_types/fusion_setting.gd" id="1_hf76v"]
+
+[resource]
+script = ExtResource("1_hf76v")
+title = "Background Color"
+default_value = Color(0.97746295, 0.5031076, 0.980802, 1)
+metadata/_custom_type_script = "uid://dsv4sjumrikwq"

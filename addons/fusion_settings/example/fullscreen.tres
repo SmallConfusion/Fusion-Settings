@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FusionSetting" load_steps=3 format=3 uid="uid://2sawwdqpppcn"]
+
+[ext_resource type="Script" uid="uid://dsv4sjumrikwq" path="res://addons/fusion_settings/setting_types/fusion_setting.gd" id="1_cks0a"]
+
+[sub_resource type="GDScript" id="GDScript_cks0a"]
+script/source = "static func apply(value: Variant) -> void:
+	# Using an autoload here to access the window is kind of a hack but it works.
+	if value:
+		FusionSettings.get_window().mode = Window.MODE_FULLSCREEN
+	else:
+		FusionSettings.get_window().mode = Window.MODE_WINDOWED
+"
+
+[resource]
+script = ExtResource("1_cks0a")
+title = "Fullscreen Mode"
+default_value = true
+apply_script = SubResource("GDScript_cks0a")
+metadata/_custom_type_script = "uid://dsv4sjumrikwq"

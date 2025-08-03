@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bchp8vg7drs4m"]
+
+[ext_resource type="Script" uid="uid://c0o5qo8iuupe6" path="res://addons/fusion_settings/fusion_setting_display.gd" id="1_8ntd1"]
+[ext_resource type="Script" uid="uid://yj8cs23rvm5q" path="res://addons/fusion_settings/example/color_rect.gd" id="1_b30pk"]
+[ext_resource type="Resource" uid="uid://2sawwdqpppcn" path="res://addons/fusion_settings/example/fullscreen.tres" id="2_jtchq"]
+[ext_resource type="Resource" uid="uid://cy8opt3rkmkbw" path="res://addons/fusion_settings/example/gui_scale.tres" id="3_jtchq"]
+[ext_resource type="Resource" uid="uid://bc2bn23i8stp5" path="res://addons/fusion_settings/example/background_color.tres" id="5_nv2sm"]
+[ext_resource type="Resource" uid="uid://yh3x0o3ermck" path="res://addons/fusion_settings/example/msaa.tres" id="6_nv2sm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b30pk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 585.0
+offset_bottom = 40.0
+
+[node name="FullscreenDisplay" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_8ntd1")
+setting = ExtResource("2_jtchq")
+metadata/_custom_type_script = "uid://c0o5qo8iuupe6"
+
+[node name="GUIScaleDisplay" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_8ntd1")
+setting = ExtResource("3_jtchq")
+metadata/_custom_type_script = "uid://c0o5qo8iuupe6"
+
+[node name="ColorDisplay" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_8ntd1")
+setting = ExtResource("5_nv2sm")
+metadata/_custom_type_script = "uid://c0o5qo8iuupe6"
+
+[node name="MSAADisplay" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_8ntd1")
+setting = ExtResource("6_nv2sm")
+metadata/_custom_type_script = "uid://c0o5qo8iuupe6"

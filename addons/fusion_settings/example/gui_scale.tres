@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FusionRangeSetting" load_steps=3 format=3 uid="uid://cy8opt3rkmkbw"]
+
+[ext_resource type="Script" uid="uid://kvl6m2kix83r" path="res://addons/fusion_settings/setting_types/fusion_range_setting.gd" id="1_fctkh"]
+
+[sub_resource type="GDScript" id="GDScript_fctkh"]
+script/source = "static func apply(value: Variant) -> void:
+	FusionSettings.get_window().content_scale_factor = value
+"
+
+[resource]
+script = ExtResource("1_fctkh")
+minimum = 0.5
+maximum = 2.0
+title = "GUI Scale"
+default_value = 1.0
+apply_script = SubResource("GDScript_fctkh")
+description = "Testing description, hover to see this."
+metadata/_custom_type_script = "uid://kvl6m2kix83r"
