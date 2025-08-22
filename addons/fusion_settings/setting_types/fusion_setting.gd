@@ -12,7 +12,7 @@ const SECTION_DEFAULT = "fusion_settings"
 @export var apply_script: GDScript
 
 ## The description of this setting.
-@export var description := ""
+@export_multiline var description := ""
 
 ## The key that this should be saved as. This can be left empty to use the
 ## title.
