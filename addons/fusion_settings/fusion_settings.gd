@@ -4,7 +4,6 @@ extends Node
 var config := ConfigFile.new()
 
 func _ready() -> void:
-	print(ProjectSettings.get_setting_with_override("fusion_settings/autoload_path"))
 	config.load(ProjectSettings.get_setting_with_override("fusion_settings/config_save_path"))
 	
 	var load_paths: Array = ProjectSettings.get_setting_with_override("fusion_settings/autoload_path")
